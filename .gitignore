@@ -1,0 +1,14 @@
+# Ignorar archivos de compilación de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.pdf
+!slide.pdf
+
+
+# Ignorar otros archivos generados por LaTeX
+*.bbl
+*.blg
+*.zip
