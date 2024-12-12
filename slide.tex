@@ -22,6 +22,8 @@
 \usepackage[backend=biber,style=apa,sorting=nyt]{biblatex}
 \addbibresource{recurso/Referencias.bib}
 
+\usepackage{ragged2e}
+
 
 \author{Br. Irving Cupul Uc}
 \title{Una propuesta basada en estimadores Bootstrap robustos para la evaluación de la precisión de un modelo con la técnica de regresión lineal}
@@ -167,7 +169,7 @@ subsubsectionstyle=hide]
 \begin{frame}{Trabajos realizados para evaluación de la exactitud y precisión}
 	
 	\begin{itemize}
-		\item  Zacarías, K. (2023). "Evaluación de la exactitud de un modelo cuando no se cumplen Los supuestos en la técnica de regresión lineal". Tesis de Maestría, Facultad
+		\item  Zacarías, K. (2023). "Evaluación de la exactitud de un modelo cuando no se cumplen los supuestos en la técnica de regresión lineal". Tesis de Maestría, Facultad
 		de Matemáticas, Universidad Autónoma de Yucatán.
 	\end{itemize}
 	
@@ -218,9 +220,11 @@ subsubsectionstyle=hide]
 
 \begin{frame}{¿Cómo evaluar la precisión?}
 	
-\begin{center}
-		En este trabajo se propone un método que permite evaluar la precisión de un modelo con la técnica de regresión lineal; y se basa en implementar diversos esquemas de remuestreo y estimar la precisión, a través de intervalos de confianza Bootstrap (ICB) para el coeficiente de determinación $R^2$, del modelo de regresión entre los valores reales y predichos del modelo que se desea evaluar.\
-\end{center}
+
+\begin{justify}
+			En este trabajo se propone un método que permite evaluar la precisión de un modelo con la técnica de regresión lineal; y se basa en implementar diversos esquemas de remuestreo y estimar la precisión, a través de intervalos de confianza Bootstrap (ICB) para el coeficiente de determinación $R^2$, del modelo de regresión entre los valores reales y predichos del modelo que se desea evaluar.
+\end{justify}
+
 	
 \end{frame}
 
@@ -249,7 +253,7 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
  \begin{enumerate}
 	\setcounter{enumi}{3}
 	\item Diseñar e implementar un estudio de simulación para evaluar la eficiencia de la metodología propuesta.
-	\item Simular modelos exactos-precisos (EP) y modelos exactos-imprecisos (EI) mediante la propuesta de Febles (2014) y Zacarias (2023); cuando se cumplan o no los supuestos de normalidad e igualdad de varianzas.
+	\item Simular modelos exactos-precisos (EP) y modelos exactos-imprecisos (EI) mediante la propuesta de \textcite{febles-2014} y \textcite{zacarias-2023}; cuando se cumplan o no los supuestos de normalidad e igualdad de varianzas.
 	\item Determinar la eficiencia de los esquemas Bootstrap propuestos para medir la precisión de un modelo.
 \end{enumerate}
 \end{frame}
@@ -259,11 +263,11 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 
 \section{Metodología}
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	\begin{figure}[ht!]
 		\centering 
-		\includegraphics[width=0.75\linewidth]{recurso/metodoPresent_v8.png} 
+		\includegraphics[width=0.75\linewidth]{recurso/Metodologia_v14.png} 
 		\label{fig:AlgDifEsqICBBoots}
 	\end{figure}
 	
@@ -273,16 +277,13 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 
 
 
-
-
-
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	\begin{enumerate}
 		\setcounter{enumi}{1}
 		\item {\large \textbf{Esquemas de remuestreo Bootstrap para la estimación de $R^{2}$}.}\\
 		
-		Para los esquemas propuestos en Rana, es necesario generar una muestra Bootstrap $y^{*}_{i}$ dado por :
+		Para los esquemas de \textcite{wu-1986} y \textcite{liu-1988}, es necesario generar una muestra Bootstrap $y^{*}_{i}$ dado por :
 		
 		\begin{center}
 			{\large$y^{*}_{i} =z_{i}\hat{\beta}_{MM} + \frac{t^{*}_{i}\hat{e}^{WMM}_{i}}{\sqrt{1-h_{ii}}} $},
@@ -293,13 +294,13 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 		 	$y^{*}_{i} = \beta_0^{*} + \beta_1^{*} z_i + \epsilon_i^{*} $,
 		 \end{center}
 		 
-		 y obtener las nuevas $R^{2*}$ para estimar su distribución.
+		 y obtener las nuevas $\hat{R}^{2*}$ para estimar su distribución.
 		
 	\end{enumerate}
 	
 \end{frame}
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	\begin{itemize}
 		\item \textbf{Wu 1}: $t^{*}_{i} \in N(0,1) , \; i= 1,\dots ,n$.
@@ -325,7 +326,7 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 \end{frame}
 
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	Para los otros esquemas, para la muestra Bootstrap $y^{*}_{i}$ se obtiene remuestreando los residuales:
 	
@@ -338,7 +339,7 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 		$y^{*}_{i} = \beta_0^{*} + \beta_1^{*} z_i + \epsilon_i^{*} $,
 	\end{center}
 	
-	y obtener las nuevas $R^{2*}$ para estimar su distribución.
+	y obtener las nuevas $\hat{R}^{2*}$ para estimar su distribución.
 	
 	\begin{itemize}
 		
@@ -353,23 +354,22 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 \end{frame}
 
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	\begin{itemize}
 		\item \textbf{Bootstrap Pareado Balanceado}:\\
 		
-		Para la estimación de la distribución de la $R^{2*}$ se considera la muestra pareada $(y_i, z_i)$, y se remuestrea aleatoriamente $B$ veces con remplazo y de forma balanceada, para obtener las muestras \( \mathbf{y}_{1}^{*}, \mathbf{y}_{2}^{*}, \dots, \mathbf{y}_{B}^{*} \) y \( \mathbf{z}_{1}^{*}, \mathbf{z}_{2}^{*}, \dots, \mathbf{z}_{B}^{*} \) y ajustar una regresión simple entre los vectores \( \mathbf{y}^{*}_{i} \) y \( \mathbf{z}_{i}^{*} \), \( b = 1, 2, \dots, B \).
-		
-	
-		
+		Para la estimación de la distribución de la $\hat{R}^{2*}$ se considera la muestra pareada $(y_i, z_i)$, y se remuestrea aleatoriamente $B$ veces con remplazo y de forma balanceada, para obtener las muestras \( \mathbf{y}_{1}^{*}, \mathbf{y}_{2}^{*}, \dots, \mathbf{y}_{B}^{*} \) y \( \mathbf{z}_{1}^{*}, \mathbf{z}_{2}^{*}, \dots, \mathbf{z}_{B}^{*} \) y ajustar una regresión simple entre los vectores \( \mathbf{y}^{*}_{i} \) y \( \mathbf{z}_{i}^{*} \), \( b = 1, 2, \dots, B \).
 	\end{itemize}
+	\vspace{.3cm}
 	
+	Todos los esquemas Bootstrap se encuentran implementados en la función $\mathbf{CalcularR2Bootstrap(y, z, yAjRob, residuales, residualesRob, residualesRP, hii, n, B, tipo)}$ en el lenguaje R.
 \end{frame}
 
 
 
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	\begin{enumerate}
 		\setcounter{enumi}{2}
@@ -393,7 +393,7 @@ Determinar la precisión de un modelo con la técnica de regresión lineal por m
 
 
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 
 	Intervalos de confianza Bootstrap BCa (\textbf{ICB BCa}) por esquema:
@@ -417,12 +417,12 @@ donde: $\hat{R}^{2}_{-i}$ es la estimación con los datos originales quitando la
 \end{frame}
 
 
-\begin{frame}{La propuesta}
+\begin{frame}{Propuesta para evaluar la precisión de un modelo}
 	
 	
 	Intervalos de confianza Bootstrap BCa (\textbf{ICB BCa}) por esquema (...continuación):
 	
-	\vspace{.3cm}
+	\vspace{.2cm}
 	
 	\begin{enumerate}
 		\setcounter{enumi}{5}
@@ -435,6 +435,9 @@ donde: $\hat{R}^{2}_{-i}$ es la estimación con los datos originales quitando la
 		
 		\item El intervalo de confianza esta dado por: $[LI_{bca}, LS_{bca}]$.
 	\end{enumerate}
+	
+	\vspace{0.3cm}
+	La construcción de los ICB está implementada en la función $\mathbf{ContruirIntervBoot(data, R2, muestrasR2Boot, B, nivConfianza, tipo)}$ en el lenguaje R.
 \end{frame}
 
 
@@ -447,8 +450,8 @@ donde: $\hat{R}^{2}_{-i}$ es la estimación con los datos originales quitando la
 
 
 \begin{frame}{Diseño del estudio de simulación}
-Para la simulación de los modelos se utilizaron los simuladores $\mathbf{ModNVC()}$, $\mathbf{ModNNVC()}$, $\mathbf{ModNNVD()}$ y $\mathbf{ModNVD()}$ (Febles, 2014; Zacarías, 2023). Se construyó la función $\mathbf{SimMod()}$ para la utilización de los simuladores.
-\vspace{.3cm}
+Para la simulación de los modelos se utilizaron los simuladores $\mathbf{ModNVC()}$, $\mathbf{ModNNVC()}$, $\mathbf{ModNNVD()}$ y $\mathbf{ModNVD()}$ \parencites{febles-2014, zacarias-2023}. Se construyó la función $\mathbf{SimMod(N,n,r,TipoPres,TipoSupues)}$ en el lenguaje R para la utilización de los simuladores y respaldo de los modelos.
+\vspace{.1cm}
 
 		
 		\begin{table}[h!]
@@ -464,8 +467,8 @@ Para la simulación de los modelos se utilizaron los simuladores $\mathbf{ModNVC
 					\item $R^2$: aleatorio entre 0.8 y 0.99
 					\item $n = 10, 15, 20, 25, 30$ y $35$
 					\item Supuestos: NVC, NVD, NNVC, NNVD
-					\item 500 modelos
-					\item 5 replicas
+					\item $N=$ 500 modelos
+					\item $r=$5 réplicas
 				\end{itemize}
 				 &
 				  	
@@ -474,8 +477,8 @@ Para la simulación de los modelos se utilizaron los simuladores $\mathbf{ModNVC
 				 	\item $R^2$: aleatorio entre 0.1 y 0.33
 				 	\item $n = 10, 15, 20, 25, 30$ y $35$
 				 	\item Supuestos: NVC, NVD, NNVC, NNVD
-				 	\item 500 modelos
-				 	\item 5 replicas
+					\item $N=$ 500 modelos
+					\item $r=$5 réplicas
 				 \end{itemize}
 				 
 				 \\ \hline
@@ -491,10 +494,12 @@ Para la simulación de los modelos se utilizaron los simuladores $\mathbf{ModNVC
 
 
 \begin{frame}{Eficiencias para los ICB }
+
+Se construyó la función $\mathbf{ProcesarModels(archivos, caso, replicas, nivConfianza, N, MODELO, CASO)}$ en el lenguaje R para evaluar la precisión de los modelos  utilizando la función de la propuesta($\mathbf{EvalPrecisionModel(data, alpha, nivConfianza, caso)}$) y construir 2 tablas: la primera tabla para la eficiencia de los intervalos y para la eficiencia de los esquemas por réplica.
 	
 	\begin{figure}[ht!]
 		\centering 
-		\includegraphics[width=0.9\linewidth]{recurso/tabla_eficiencia_intervalo.png} 
+		\includegraphics[width=0.73\linewidth]{recurso/tabla_eficiencia_intervalo.png} 
 		\label{fig:tablaEficInt}
 	\end{figure}
 	
@@ -605,18 +610,18 @@ En total se construyeron 96 tablas para las eficiencias, de las cuales 48 fueron
 
 
 %%%%%%%%%%%%%propuesta final
-\begin{frame}{Propuesta final}
+\begin{frame}{Propuesta final para la evaluación de la precisión de un modelo}
 	\begin{figure}[ht] 
 		\centering 
-		\includegraphics[width=0.62\linewidth]{recurso/finalPresent.png} 
+		\includegraphics[width=0.62\linewidth]{recurso/metodoPresent_v10.png} 
 		\label{fig:finalPropuesta}
 	\end{figure}
 \end{frame}
 
 
-\begin{frame}{Aplicación de la propuesta final}
+\begin{frame}{Aplicación de la propuesta final para evaluar la precisión}
 	\begin{exampleblock}{Caso NVC:}
-		Para este caso se consideraron los datos experimentales de la ganancia diaria de peso (GDP) en ovinos; datos experimentales vs. modelo de simulación para estimar la ganancia diaria de peso (GDP) Osorio (2011). Estos datos se encuentran en el apéndice B de Balam (2012).
+		Para este caso se consideraron los datos experimentales de la ganancia diaria de peso (GDP) en ovinos; datos experimentales vs. los predichos obtenidos de un modelo de simulación para estimar la ganancia diaria de peso (GDP) \parencite{osorio-2011}. Estos datos se encuentran en el apéndice B de \textcite{balam-2012}.
 	\end{exampleblock}
 \end{frame}
 
@@ -631,9 +636,9 @@ En total se construyeron 96 tablas para las eficiencias, de las cuales 48 fueron
 
 
 
-\begin{frame}{Aplicación de la propuesta final}
+\begin{frame}{Aplicación de la propuesta final para evaluar la precisión}
 	\begin{exampleblock}{Caso NNVD:}
-		Se aplicó a los datos experimentales del volumen de una parcela en metros cúbicos a un diámetro superior $(n = 63)$ de 10cm y los simulados con el modelo PTAEDA Chung (1987), el cual es un modelo estocástico. Cada simulación con el modelo PTAEDA corresponde a la media de 10 corridas del modelo para cada parcela. En cada parcela se mide la edad, el indice de sitio y el número de arboles por hectárea. Estos datos se encuentran en el apéndice B de Balam (2012).
+		Se aplicó a los datos experimentales del volumen de una parcela en metros cúbicos a un diámetro superior $(n = 63)$ de 10cm y los simulados con el modelo PTAEDA \parencite{chung-1987}, el cual es un modelo estocástico. Cada simulación con el modelo PTAEDA corresponde a la media de 10 corridas del modelo para cada parcela. En cada parcela se mide la edad, el indice de sitio y el número de arboles por hectárea. Estos datos se encuentran en el apéndice B de \textcite{balam-2012}.
 	\end{exampleblock}
 \end{frame}
 
@@ -648,15 +653,15 @@ En total se construyeron 96 tablas para las eficiencias, de las cuales 48 fueron
 
 
 \section{Conclusiones}
-\begin{frame}
-\begin{enumerate}
-	\item 	Se propuso un método para evaluar la precisión de un modelo con la técnica de regresión lineal ; basado en ocho esquemas de remuestreo, dos tipos de modelo y seis tamaños de muestra; a través de dos ICB para el coeficiente de determinación $R^2$ y se consideraron los cuatro escenarios posibles (NVC, NNVC, NVD y NNVD) ante el cumplimiento o no normalidad y/o varianza constante.
-
-	\item 	Se realizó un estudio de simulación para comparar las eficiencias de los intervalos de confianza para cada tipo de supuesto con respecto a los diferentes esquemas Bootstrap, tamaños de muestra y tipo de modelo.
-
-	\item 	Análisis estadísticos: se determinó con al menos un 95\% que para los supuestos NVC, NNVC o NVD se utilice el ICB Percentil con el esquema de remuestreo Liu2 sin importar el tamaño de muestra. Y se determinó con al menos el 88.8\% que para el supuesto NNVD se utilice el ICB BCa con el esquema de remuestreo pareado balanceado.
-\end{enumerate}
+\begin{frame}{Conclusiones}
 	
+	\begin{enumerate}
+		\item 	Se propuso un método para evaluar la precisión de un modelo con la técnica de regresión lineal ; basado en ocho esquemas de remuestreo, dos tipos de modelo y seis tamaños de muestra; a través de dos ICB para el coeficiente de determinación $R^2$ y se consideraron los cuatro escenarios posibles (NVC, NNVC, NVD y NNVD) ante el cumplimiento o no normalidad y/o varianza constante.
+	
+		\item 	Se realizó un estudio de simulación para comparar las eficiencias de los intervalos de confianza para cada tipo de supuesto con respecto a los diferentes esquemas Bootstrap, tamaños de muestra y tipo de modelo.
+	
+		\item 	Análisis estadísticos: se determinó con al menos un 95\% que para los supuestos NVC, NNVC o NVD se utilice el ICB Percentil con el esquema de remuestreo Liu2 sin importar el tamaño de muestra. Y se determinó con al menos el 88.8\% que para el supuesto NNVD se utilice el ICB BCa con el esquema de remuestreo pareado balanceado.
+	\end{enumerate}
 
 \end{frame}
 
@@ -666,7 +671,7 @@ En total se construyeron 96 tablas para las eficiencias, de las cuales 48 fueron
 		\setcounter{enumi}{3}
 		\item 	Propuesta final: para los supuestos NVC, NNVC o NVD se utilice el ICB Percentil con el esquema de remuestreo Liu2 (NVC: residuales de regresión lineal simple, NNVC: residuales robustos sin ponderar y NVD: residuales robustos ponderados) y para el supuesto NNVD se utilice el ICB BCa con el esquema de remuestreo Pareado Balanceado
 		
-		\item 	Se aplicó la propuesta final, para la ganancia diaria de peso en ovinos, el modelo resultó ser de tipo NVC y preciso, coincidiendo con Balam (2012), cabe señalar que usó ICB BCa con residuales balanceados y en este trabajo se usó ICB Percentil con el esquema de remuestreo Liu2. Para el volumen por parcela, el modelo resultó de tipo NNVD y preciso, coincidiendo con Balam (2012), tanto en la decisión como en el esquema e ICB que utilizó.
+		\item 	Se aplicó la propuesta final, para la ganancia diaria de peso en ovinos, el modelo resultó ser de tipo NVC y preciso, coincidiendo con \textcite{balam-2012}, cabe señalar que usó ICB BCa con residuales balanceados y en este trabajo se usó ICB Percentil con el esquema de remuestreo Liu2. Para el volumen por parcela, el modelo resultó de tipo NNVD y preciso, coincidiendo con \textcite{balam-2012} , tanto en la decisión como en el esquema e ICB que utilizó.
 	\end{enumerate}
 	
 	
@@ -697,15 +702,41 @@ En total se construyeron 96 tablas para las eficiencias, de las cuales 48 fueron
 
 \section{Referencias}
 
-\begin{frame}{Referencias}
+\begin{frame}{Referencias importantes}
+\begin{itemize}
+	\item Balam, R. (2012). Evaluación de la Exactitud y Precisión de un Modelo con Regresión Lineal [Tesis de Maestría]. UADY, Facultad de Matemáticas.
 	
-    \printbibliography
+	\item Febles, A. (2014). Evaluación de la eficiencia del Método de Regresión en la Validación de	Modelos: Un Estudio de Simulación [Tesis de Maestría]. UADY, Facultad de	Matemáticas.
+	
+	\item Liu, R. Y. (1988).Bootstrap Procedures under some Non-I.I.D. Models. The Annals of Statistics, 16(4), 1696–1708. https://doi.org/10.1214/aos/1176351062
+	
+	\item Mazún,E.(2014). Diseño e implementación en el svmrl del método de freese con sus
+	extensiones para validad modelos en web [Tesis de Licenciatura]. UADY,
+	Facultad de Matemáticas.
+
+\end{itemize}
 \end{frame}
 
 
 \begin{frame}
+\begin{itemize}
+	\item Osorio, A. I. (2011). Modelo de simulación para predecir ganancia de peso en ovinos alimentados con dietas altas en grano [Tesis de Maestría]. Universidad Autónoma Metropolitana, Unidad Xochimilco.
+	
+	\item 	 Reynolds, M. R. J., \& Chung, J. (1987).Regression methodology for estimating model prediction error. Canadian Journal of Forest Research, 16(5), 931–938.
+	
+	\item 	Wu,C.F. J. (1986).Jackknife, Bootstrap and Other Resampling Methods in Regression
+	Analysis. The Annals of Statistics, 14(4), 1261–1295. https://doi.org/10.1214/aos/1176350142
+	
+	\item 	Zacarías, K. (2023). Evaluación de la exactitud de un modelo cuando no se cumplen los supuestos en la técnica de regresión lineal [Tesis de Maestría]. UADY, Facultad de Matemáticas.
+\end{itemize}
+	
+\end{frame}
+
+
+
+\begin{frame}
     \begin{center}
-        {\Huge\calligra Muchas Gracias}
+        {\Huge \calligra Muchas Gracias}
     \end{center}
 \end{frame}
 

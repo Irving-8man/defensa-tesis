@@ -3059,9 +3059,29 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">recurso/Referencias.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">zacarias-2023</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">zacarias-2023</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">mazun-2014</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">febles-2014</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">febles-2014</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">zacarias-2023</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">zacarias-2023</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">wu-1986</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">wu-1986</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">liu-1988</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">liu-1988</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">febles-2014</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">zacarias-2023</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">osorio-2011</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">chung-1987</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">balam-2012</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">zacarias-2023</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">zacarias-2023</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">mazun-2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
@@ -3098,15 +3118,6 @@
                 type="entry"
                 sortingtemplatename="nyt"
                 sortingnamekeytemplatename="apasortcite"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global">
-  </bcf:datalist>
-  <bcf:datalist section="0"
-                name="nyt/global//global/global"
-                type="entry"
-                sortingtemplatename="nyt"
-                sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"
                 labelalphanametemplatename="global">
